@@ -1,0 +1,24 @@
+version: '3.7'
+
+services:
+  db:
+    image: postgres
+    ports: 
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=drf_boilerplate
+      - POSTGRES_PASSWORD=drf_boilerplate
+      - POSTGRES_DB=drf_boilerplate
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    restart: always
+    env_file:
+      - ./.envs/.dev
+      - ./.envs/.db
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db

@@ -1,0 +1,3 @@
+DJANGO_SECRET_KEY=j1(f7t4sk=^f$^nr$@h2$98sxjn=-pz9e3bf@q*#z6n#!l02wi
+DJANGO_DEBUG=1
+DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
